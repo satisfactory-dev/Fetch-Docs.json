@@ -1,0 +1,123 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$defs": {
+		"platforms": {
+			"type": "object",
+			"additionalProperties": {"$ref": "#/$defs/builds"},
+			"properties": {
+				"windows": {"$ref": "#/$defs/builds"}
+			}
+		},
+		"builds": {
+			"type": "object",
+			"required": [
+				"app_id",
+				"depot_id",
+				"builds"
+			],
+			"additionalProperties": false,
+			"properties": {
+				"app_id": {"$ref": "#/$defs/ctype_digit"},
+				"depot_id": {"$ref": "#/$defs/ctype_digit"},
+				"builds": {
+					"type": "array",
+					"minItems": 1,
+					"items": {"$ref": "#/$defs/build"}
+				}
+			}
+		},
+		"build": {
+			"type": "object",
+			"required": [
+				"build",
+				"steam_manifest_id",
+				"version",
+				"update"
+			],
+			"additionalProperties": false,
+			"properties": {
+				"build": {
+					"type": "integer",
+					"minimum": 124162
+				},
+				"steam_manifest_id": {"$ref": "#/$defs/ctype_digit"},
+				"experimental": {
+					"type": "boolean",
+					"const": false
+				},
+				"version": {
+					"type": "string",
+					"pattern": "^\\d+\\.\\d+\\.\\d+\\.\\d+"
+				},
+				"update": {
+					"oneOf": [
+						{
+							"type": "integer",
+							"enum": [
+								3,
+								4,
+								5,
+								6,
+								7,
+								8
+							]
+						},
+						{
+							"type": "string",
+							"pattern": "^1\\.\\d+"
+						}
+					]
+				},
+				"file_check": {
+					"type": "object",
+					"required": [
+						"filename"
+					],
+					"minProperties": 2,
+					"additionalProperties": false,
+					"properties": {
+						"filename": {
+							"type": "string",
+							"enum": [
+								"FactoryGame.exe",
+								"FactoryGameSteam.exe"
+							]
+						},
+						"sha512": {
+							"type": "string",
+							"pattern": "^[0-9a-f]{128}$"
+						}
+					}
+				},
+				"exfiltrate": {
+					"type": "object",
+					"required": [
+						"CommunityResource"
+					],
+					"additionalProperties": false,
+					"properties": {
+						"CommunityResource": {
+							"type": "string",
+							"enum": [
+								"Docs/Docs.json",
+								"Docs/*.json"
+							]
+						}
+					}
+				}
+			}
+		},
+		"ctype_digit": {
+			"type": "string",
+			"pattern": "^\\d+$"
+		}
+	},
+	"type": "object",
+	"required": [
+		"game"
+	],
+	"additionalProperties": {"$ref": "#/$defs/platforms"},
+	"properties": {
+		"game": {"$ref": "#/$defs/platforms"}
+	}
+}

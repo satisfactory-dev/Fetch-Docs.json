@@ -1,0 +1,13 @@
+services:
+    devcontainer:
+        build:
+            dockerfile: devcontainer.DockerFile
+        restart: always
+        command: sleep infinity
+        volumes:
+            - ../..:/workspaces:cached
+            - steamapps_satisfactory:/app/steamapps/app_526870/:ro
+
+volumes:
+    steamapps_satisfactory:
+        external: true

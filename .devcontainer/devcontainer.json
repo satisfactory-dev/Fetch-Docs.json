@@ -1,0 +1,31 @@
+{
+	"name": "Fetch Docs.json",
+	"dockerComposeFile": "./docker-compose.yml",
+	"service": "devcontainer",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"remoteUser": "vscode",
+	"updateRemoteUserUID": true,
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"EditorConfig.EditorConfig",
+				"dbaeumer.vscode-eslint",
+				"ms-vscode.makefile-tools"
+			],
+			"settings": {
+				"chat.agent.enabled": false,
+				"json.schemas": [
+					{
+						"fileMatch": ["/workspaces/${localWorkspaceFolderBasename}/versions.json"],
+						"url": "/workspaces/${localWorkspaceFolderBasename}/versions.schema.json"
+					}
+				]
+			}
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "23"
+		}
+	}
+}
