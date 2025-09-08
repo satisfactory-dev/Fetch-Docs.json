@@ -1,6 +1,3 @@
-steamcmd:
-	@docker compose run --remove-orphans steamcmd bash
-
 lint--json:
 	@node ./validate-versions.ts
 
