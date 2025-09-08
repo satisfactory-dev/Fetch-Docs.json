@@ -9,6 +9,7 @@ If you only want to download old versions of Satisfactory, refer to the table be
 
 | Update | Version | Command |
 | --- | --- | --- |
+| 1.1 | 1.1.1.4 | `download_depot 526870 526871 7817979636868695980` |
 | 1.1 | 1.1.1.3 | `download_depot 526870 526871 4846844245916086222` |
 | 1.0 | 1.0.1.4 | `download_depot 526870 526871 3007809920758804289` |
 | 8 | 0.8.3.3 | `download_depot 526870 526871 3783838377491884235` |
