@@ -63,7 +63,7 @@
 					"update": 7,
 					"file_check": {
 						"filename": "FactoryGame.exe",
-						"sha512": "c4bb10fd8f515b14a3f6a368ecb8647c94472bbb566685099b238329d8885551d80f95066e5098ae3363ecfed9a68cd3779f5e4411a4ca4990b1e0e93311ce23"
+						"sha512": "6167d6ff7a0b606ecc45d9308d56276efca4922bbe153f8b71f51093c0cc75db607baa926d862845abff26b8b7280e6b4c10b85018d3002ad14c611ce2a792c4"
 					},
 					"exfiltrate": {
 						"CommunityResource": "Docs/Docs.json"
