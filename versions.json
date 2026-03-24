@@ -146,6 +146,19 @@
 					"exfiltrate": {
 						"CommunityResource": "Docs/*.json"
 					}
+				},
+				{
+					"build": 481836,
+					"steam_manifest_id": "8930058181776393582",
+					"version": "1.2.1.0",
+					"update": "1.2",
+					"file_check": {
+						"filename": "FactoryGameSteam.exe",
+						"sha512": "39c37b53ee453404e852152fb612dfa6770e98450fbc6fe5678a7d0f18ee6d85091483f8fde5bfea7d51254ec2ff9f89f0260a382809ab3fc6c620c413f27a08"
+					},
+					"exfiltrate": {
+						"CommunityResource": "Docs/*.json"
+					}
 				}
 			]
 		}
